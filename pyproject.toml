@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+
+[tool.isort]
+profile = "black"
+
+[flake8]
+max-line-length = 88
+exclude = [
+  "venv",
+  ".venv",
+  "env",
+  ".env",
+  ".git",
+  "__pycache__",
+  ".pytest_cache",
+]
+
+[project]
+name = "my-project"
+version = "0.0.1"
+authors = [
+  { name = "Example Author", email = "author@example.com" },
+]
+description = "A small example package"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+# Include the contents of requirements.txt file
+[build-system.requires]
+python_version = ">=3.8"
+packages = [
+    { file = "requirements.txt" }
+]
